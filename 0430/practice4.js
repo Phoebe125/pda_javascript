@@ -10,6 +10,12 @@ ask(() => confirm("동의하십니까?"),
     function () { alert("취소 버튼을 누르셨습니다.") }
 )
 
+/* 아래 3개의 코드는 동일한 의미이다.
+ * () => confirm("동의하십니까?")
+ * () => { return confirm("동의하십니까?")}
+ * function () { return confirm("동의하십니까?") }
+ */
+
 // 동인 언니 코드
 const ask2 = function askAndAnswer(func1, func2, func3) {
     let a = func1();
