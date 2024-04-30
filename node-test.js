@@ -19,3 +19,10 @@ LET
 - 블록 스코프
 - 변수 재선언 불가능
 - 초기화 전에 접근 불가능*/
+
+// 2. js의 세미콜론
+// ; 붙이거나, 붙이지 말자!
+console.log("A")
+console.log("B")
+
+console.log("A"); console.log("B");
