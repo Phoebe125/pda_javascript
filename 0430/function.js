@@ -22,6 +22,8 @@ const max2 = (a, b) => {
     return a > b ? a : b;
 }
 
+
+
 // return 값만 있을 땐 다음과 같이  작성도 가능
 const max3 = (a, b) => (a > b ? a : b);
 
