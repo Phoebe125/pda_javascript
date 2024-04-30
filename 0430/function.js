@@ -48,10 +48,34 @@ const greetHello = createGreeting("Hello");
 const greetHi = createGreeting("Hi");
 greetHello("Alice"); // 출력: Hello, Alice!
 greetHi("Bob"); // 출력: Hi, Bob!
-console.log(typeof(greetHello)); // 출력: function
-console.log(typeof(greetHi("Bob"))); // 출력: undefined
+console.log(typeof (greetHello)); // 출력: function
+console.log(typeof (greetHi("Bob"))); // 출력: undefined
 
 /** 
  * Return이 없거나, 비어있는 경우: undefined
  * 함수를 Return하는 경우: 
  * **/
+
+// 4. Closure
+/** 클로저(closure)
+- 함수와 함수가 선언된 어휘적 환경의 조합
+- 내부 함수가 생성될 때 그 scope에 있는 모든 변수에 대해 접근할 권한을 가짐
+- 외부 함수의 실행을 마친 후에도 그 변수에 접근 가능
+**/
+
+function outer() {
+    let count = 0;
+    function sample() {
+        console.log(count);
+    }
+    function inner() {
+        count++;
+        return count;
+    }
+    return inner;
+}
+
+const counter = outer();
+console.log(counter());
+console.log(counter());
+
