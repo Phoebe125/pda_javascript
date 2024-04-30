@@ -1,11 +1,11 @@
 ### 프로디지털 아카데미 자바스크립트 강의
 
-#### Var Vs Let
+### Var Vs Let
 - **VAR**: 선언을 맨 위로 올려버린다. 변수가 정의되기 전에 호출해도 에러가 나지 않는다. 함수 scope
 
 - **LET**: 함수 scope를 가진 var 덕분에 Hoisting 문제 발생, 블록 scope
 
-#### Primitive DataType
+### Primitive DataType
 - Number (숫자형)
 - String (문자열)
 - Boolean (true/false)
@@ -13,7 +13,7 @@
 - undefined (변수가 선언되었으나 값이 할당되지 않은 상태)
 - null null값 (명시적으로 값이 없음)
 
-#### 스코프와 클로저(Clousre)
+### 스코프와 클로저(Clousre)
 
 **스코프**
 
@@ -70,3 +70,11 @@
 ### **필터링**
 
 - **`arr.filter((item, idx) => {...})`**: 조건에 맞는 요소를 필터링하여 새로운 배열 반환.
+
+
+### 함수형 프로그래밍이란 ..
+- 함수 안에서 함수를 호출하는게 불편하다
+- 그 대신, 함수를 인자로 전달하는 형태로! -> 이걸 함수형 프로그래밍으로! (외부에서 접근 가능하게)
+- map, filter, setInterval, setTimeout ...
+- 많은 js 라이브러리드링 함수형 프로그래밍을 지원한다.
+- React, express.js ...
