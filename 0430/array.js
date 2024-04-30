@@ -82,3 +82,13 @@ const result2 = arr.filter((item, idx) => {
     return item > 3;
 })
 console.log(result2);
+
+// reduce
+/* 배열의 요소들을 모두 순회하여 initialValue부터 시작하여 누적된 결과를 만듦 */
+const arr3 = [1, 2, 3, 4, 5];
+const result3 = arr3.reduce((prev, cur, idx, arr) => {
+    console.log(prev, cur, idx, arr);
+    console.log("-".repeat(10));
+    return prev + cur;
+}, 10); // initialValue는 여기서 10임!
+console.log(result3); // 출력은 모든 누적합이 된다!
