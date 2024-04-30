@@ -20,11 +20,11 @@ console.log(counter1()); // 3
 
 /* 연습 문제 2 */
 function createIncrementer(start, step) {
-    let _start = start;
-    let _step = step;
+    let startIn = start;
+    let stepIn = step;
     function inner() {
-        _start += _step;
-        return _start;
+        startIn += stepIn;
+        return startIn;
     }
     return inner;
 }
