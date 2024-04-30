@@ -53,3 +53,22 @@ console.log(func2(2));
 
 console.log(typeof (func1(2))); // 출력: number
 console.log(typeof (func2)); // 출력: function
+
+// Q: Closure 를 사용하는 이유를 잘 모르겠어요!
+function onLoginBtnClick() {
+    console.log("Button1 클릭 로직...");
+}
+
+function loggigBtn(btnName, func) {
+    let count = 0;
+    return function () {
+        console.log(`${btnName} 클릭되었습니다...`);
+        count++;
+        func();
+        console.log(`${btnName} - ${count} 번 실행 완료`);
+        return count;
+    }
+}
+
+const btnClick = loggingBtn("Btn1", onLoginBtnClick);
+onLoginBtnClick();
