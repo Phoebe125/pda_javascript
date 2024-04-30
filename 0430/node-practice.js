@@ -22,3 +22,14 @@ rl.on('line', function (line) {
 
     }
 });
+
+// 예시 정답 코드 - 브라우저에서 
+let s1 = prompt("점수입력1: ");
+let s2 = prompt("점수입력2: ");
+let s3 = prompt("점수입력3: ");
+
+n1 = parseInt(s1);
+n2 = parseInt(s2);
+n3 = parseInt(s3);
+
+console.log(n1>65 && n2>65 && n3>65);
