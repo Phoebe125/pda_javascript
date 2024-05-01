@@ -17,7 +17,7 @@ sample.reverse()
 
 // pop 과 push
 // pop과 push는 array 자체가 변한다
-sample.push(4) // push 의 return 값은 개수이다.
+sample.push(4) // push 의 return 값은 개수이다. 여기서 에러가 자주 난다 주의!
 console.log(sample)
 sample.pop()
 console.log(sample)
@@ -78,7 +78,7 @@ console.log(arr1);
 // filter
 // return이 True인 애들만 모아서 새로운 배열을 만든다.
 const arr = [1, 2, 3, 4, 5];
-const result2 = arr.filter((item, idx) => {
+const result2 = arr.filter((item, idx, array) => {
     return item > 3;
 })
 console.log(result2);
