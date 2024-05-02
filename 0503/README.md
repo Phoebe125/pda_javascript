@@ -32,12 +32,11 @@ function runTask() {
 ```
 
 ### Promise. allSettled
-- 비동기 함수를 병렬적으로 실행하고 모아서 작업할래. 
+- 비동기 함수를 병렬적으로 실행하고 모아서 작업할래
 - (모든 Promise가 resolve 혹은 reject를 기다림)
-
-- Promise.allSettled 메서드는 모든 프로미스가 완료를 기다림.(성공이든 실패든) 
-- 그리고 각 프로미스의 결과에 대한 정보를 담은 객체 배열을 반환합니다. 
-- 각 객체는 { status, value } 또는 { status, reason }의 형태를 가지며, status는 "fulfilled" 또는 "rejected“
+- Promise.allSettled 메서드는 모든 프로미스가 완료를 기다림.(성공이든 실패든)
+- 그리고 각 프로미스의 결과에 대한 정보를 담은 객체 배열을 반환합니다.
+- 각 객체는 { status, value } 또는 { status, reason }의 형태를 가지며, status는 "fulfilled" 또는 "rejected"
 - fulfilled된 프로미스는 value 속성을, rejected된 프로미스는 reason 속성을 가집니다.
 ```jsx
 function runTask() {
