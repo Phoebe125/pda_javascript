@@ -23,6 +23,13 @@ function tmpCalls(func, n) {
         }
     }
 }
+function DlimitCalls(func,n){ // 안되는 코드
+    let i =0;
+    i++; 
+    if(i<n) {return func;}
+    else {return ()=>{};}
+}
+
 const limitedHello = limitCalls(() => console.log("Hello!"), 2);
 
 limitedHello(); // "Hello!"
