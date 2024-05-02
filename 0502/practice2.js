@@ -47,6 +47,7 @@ for (let i = 1; i < 10; i++) {
 }
 
 // 연습문제 4 (p.120)
+// 구구단
 for (let i = 1; i < 101; i++) {
     if (i % 3 == 0 && i % 5 == 0) {
         console.log(`${i} 3과 5의 공배수`);
@@ -62,6 +63,7 @@ for (let i = 1; i < 101; i++) {
     }
 }
 
+// 심화: 1-입력한 숫자까지의 숫자 구구단
 const num3 = parseInt(prompt("정수를 입력해주세요: "));
 
 for (let i = 1; i < num3 + 1; i++) {
