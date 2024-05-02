@@ -18,6 +18,12 @@ for (item of x) {
     console.log(item);
 }
 
+// cf) map으로 
+x.map((elem) => {
+    console.log(elem * 10);
+    return elem * 10;
+})
+
 let y = { "math": 70, "science": 80, "english": 20 }
 for (key in y) {
     y[key] += 10;
