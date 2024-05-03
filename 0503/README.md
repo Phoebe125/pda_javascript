@@ -92,3 +92,31 @@ animal.run();
 ### 프로토타입
 - <a href="https://poiemaweb.com/js-prototype">프로토타입 관련 정리된 글</a>
 ![프로토타입 체인](../docs/prototype.png)
+
+### 브라우저를 위한 Javascript
+- **DOM (Document Object Model)**: HTML 및 XML 문서의 구조적 표현을 메모리에
+로드하는 방식입니다. 웹 페이지의 각 요소에 접근하고 수정할 수 있는 API를 제공하여, 문서 구조, 스타일, 내용 등을 동적으로 조작할 수 있다.
+- **getElementById**: ID를 통해 특정 요소를 선택한다.
+- **getElementsByClassName**: 특정 클래스를 가진 모든 요소를 선택한다.
+- **querySelectorAll**: css selector로 모두 조회
+- **querySelector**: css selector로 조회 (하나만)
+- **getAttributes**: HTML 요소의 속성을 가져올 수 있다. 이 메서드는 특정 요소의 속성 값을 가져오기 위해 사용된다.
+- **document.createElement(a)**
+- **header.appendChild(child)** 
+
+### Event
+- 이벤트는 웹 페이지 상에서 사용자의 동작이나 브라우저의 특정 활동에 반응하여 발생하는 신호 또는 알림
+- 자바스크립트와 HTML에서 이벤트는 웹 애플리케이션과 상호작용하는 주요 방법 중 하나.
+- 이벤트를 이해하고 적절히 사용하는 것은 동적인 웹 페이지를 구성하는 데 필수.
+
+**이벤트의 종류**
+- UI 이벤트: 사용자 인터페이스에 발생하는 일반적인 이벤트입니다. 예를 들어, 페이지 로딩(load), 언로딩(unload), 뷰포트 크기 조정(resize), 스크롤(scroll) 등이 있음.
+- 키보드 이벤트: 사용자가 키보드를 사용할 때 발생합니다. 주요 이벤트로는 keydown, keyup, keypress가 있습니다.
+- 마우스 이벤트: 마우스를 사용할 때 발생하는 이벤트입니다. click, dblclick, mouseup, mousedown, mousemove, mouseover, mouseout 등이 포함됩니다.
+- 포커스 이벤트: 요소가 포커스를 얻거나 잃을 때 발생합니다. focus, blur, focusin, focusout 등이 있습니다.
+- 폼 이벤트: 웹 폼과 관련된 이벤트입니다. submit, change, input, reset 등이 포함됩니다.
+- 터치 이벤트: 모바일 장치에서 터치 스크린을 통한 상호작용 시 발생합니다. touchstart, touchmove, touchend, touchcancel 등이 있습니다.
+
+**이벤트 리스너와 이벤트 객체**
+- 이벤트 리스너는 특정 이벤트가 발생했을 때 호출되는 함수
+- element.addEventListener 이벤트 객체는 이벤트 type, target 요소, 이벤트와 관련된 데이터 포함.
