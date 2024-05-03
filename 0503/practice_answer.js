@@ -45,6 +45,7 @@ async function fetchById(idx) {
 }
 (async () => {
     const arr = [1, 3, 5, 7, 9].map(value => fetchById(value));
+    // const arr = [1, 3, 5, 7, 9].map(fetchById); // 위와 동일한 코드임
     const data = await Promise.all(arr);
     console.log(data);
 })();
