@@ -89,4 +89,6 @@ console.log(animal.constructor);
 animal.run();
 ```
 
+### 프로토타입
 - <a href="https://poiemaweb.com/js-prototype">프로토타입 관련 정리된 글</a>
+![프로토타입 체인](../docs/prototype.png)

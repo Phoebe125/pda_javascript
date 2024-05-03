@@ -15,3 +15,5 @@ func1.apply(animal, ['서울']);
 // <func>.bind()
 const func2 = func1.bind(animal);
 func2("울산");
+
+// <func>.call()
