@@ -65,3 +65,28 @@ function runTask() {
     })
 }
 ```
+
+### OOP
+- 자바스크립트는 `class` 가 없다!
+- constructor는 생성자 함수 그 자체
+- prototype은 생성자 함수에 정의한 모든 객체가 공유할 원형
+- __proto__는 생성자 함수를 new로 호출할 때, 정의해두었던 prototype을 참조한 객체
+- prototype은 생성자 함수에 사용자가 직접 넣는 거고, `__proto__`는 new를 호출할 때 prototype을 참조하여 자동으로 만들어짐
+- Animal.prototype === animal2.__proto__
+- 객체의 속성을 호출하였는데 없으면 proto 참조하여 호출
+
+```jsx
+function Animal(name) {
+    this.name = name;
+    this.run = function(){
+        console.log(`${this.name} 동물이 달린다.`)
+    }
+}
+
+const animal = new Animal("사자");
+console.log(animal);
+console.log(animal.constructor);
+animal.run();
+```
+
+- <a href="https://poiemaweb.com/js-prototype">프로토타입 관련 정리된 글</a>
