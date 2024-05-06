@@ -40,3 +40,13 @@
     console.log('This will stop event propagation');
     });
   ```
+
+  ## 이벤트 기본 처리 변경 – preventDefault
+- form의 submit button 같은 경우 기본적인 이벤트리스너가 등록되어 있다.(폼 제출)  
+- 이런 default event 메서드를 중단하기 위해선 다음 함수 사용  
+- `preventDefault()`   
+```jsx
+    element.addEventListener('click', function(event) {
+    event.preventDefault(); // default 실행중지
+    });
+```
