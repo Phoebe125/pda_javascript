@@ -12,13 +12,21 @@
     <script>
         function onChangeInput1(e){
             const tmp = parseInt(e.target.value) + parseInt(num2.value);
-            console.log(tmp); 
-            result.innerHTML = `${tmp}`;
+            if (isNaN(tmp)){
+                result.innerHTML = "사용할 수 없는 값입니다.";
+            }
+            else {
+                result.innerHTML = `${tmp}`;
+            }
         }
         function onChangeInput2(e){
             const tmp = parseInt(e.target.value) + parseInt(num1.value);
-            console.log(tmp); 
-            result.innerHTML = `${tmp}`;
+            if (isNaN(tmp)){
+                result.innerHTML = "사용할 수 없는 값입니다.";
+            }
+            else {
+                result.innerHTML = `${tmp}`;
+            }
         }
         const num1 = document.getElementById('num1');
         const num2 = document.getElementById('num2');
