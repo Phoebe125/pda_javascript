@@ -41,7 +41,7 @@
     });
   ```
 
-  ## 이벤트 기본 처리 변경 – preventDefault
+### 이벤트 기본 처리 변경 – preventDefault
 - form의 submit button 같은 경우 기본적인 이벤트리스너가 등록되어 있다.(폼 제출)  
 - 이런 default event 메서드를 중단하기 위해선 다음 함수 사용  
 - `preventDefault()`   
@@ -50,3 +50,26 @@
     event.preventDefault(); // default 실행중지
     });
 ```
+
+### BOM (Browser Object Model)
+**[주요 BOM 객체]**
+- window(브라우저 객체의 최상위 객체.)  
+  - open("url 경로", "창 이름", "옵션 설정") - url 열기  
+  : 해당 창이 변수로 return 반환  
+  - close( ) – 창 닫기  
+  - alert - 경고 창  
+  - confirm("질의 내용") - 확인/취소 창을 띄움.(true/false)  
+- screen(사용자의 디스플레이에 대한 정보를 제공)  
+  - width/heigh  
+- location(현재 페이지의 URL을 다루고 페이지 이동을 제어)  
+  - href - 주소 영역에 참조 주소를 설정하거나 URL 반환.  
+  - host – hostname 반환  
+  - reload – 새로고침  
+  - replace – 현위치를 바꿔버림. (history 기록 X)  
+- history(사용자 위치 history)  
+  - back() - 뒤로가기  
+  - forward() - 앞으로 가기  
+- Navigator: 사용자의 브라우저와 운영체제에 대한 정보를 제공  
+  - userAgent – user-agent  
+  - language - 언어  
+
