@@ -23,3 +23,20 @@
         resultBox.innerHTML = inputValue1 + inputValue2;
     }
 ```
+
+### 이벤트 전파 - Event Propagation  
+- 이벤트 전파는 이벤트가 발생했을 때 DOM 트리를 통해 이벤트가 전달되는 방식을 말함. 
+- 이벤트 전파는 세 단계로 진행:  
+  1. 캡처링 단계: 이벤트가 최상위 노드에서부터 이벤트 타깃까지 전달됩니다.  
+  - 브라우저가 인지한다.  
+  2. 타깃 단계: 이벤트가 타깃 요소에서 처리됩니다.  
+  - 타깃에서부터 리스너 함수가 실행  
+  3. 버블링 단계: 이벤트가 타깃 요소에서부터 다시 최상위 노드까지 올라갑니다.  
+  - 부모 노드의 이벤트 리스너 호출로 전파.  
+  - 만약 버블링을 멈추고 싶다면, `event.stopPropagation()`  
+  ```jsx
+    element.addEventListener('click', function(event) {
+    event.stopPropagation(); // 이벤트 전파 중지
+    console.log('This will stop event propagation');
+    });
+  ```
