@@ -73,3 +73,21 @@
   - userAgent – user-agent  
   - language - 언어  
 
+
+### 웹은 Server & Client 구조!!!
+
+### Request 의 메소드 (HTTP Method)  
+1. **GET**: 가져오기  
+2. **POST**: 붙이기 (등록하기)  
+3. **PUT**: 수정하기  
+4. **DELETE**: 삭제하기  
+
+### Response Status Code (HTTP Status Code)  
+**2XX**: 성공  
+**3XX**: Page Redirection  
+**4XX**: Client Error  
+**5XX**: Server Error  
+
+### 데이터 포맷
+1. XML
+2. JSON
