@@ -91,3 +91,60 @@
 ### 데이터 포맷
 1. XML
 2. JSON
+
+
+### npm axios
+- 폴더 하나 만든 다음에 `npm init`  
+- 패키지 설치를 위해 `npm install axios` 하면 됨 (해당 폴더로 이동해서)  
+```json
+{
+  "name": "practice_npm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}
+```
+- `"type": "commonjs` 도 사용할 수 있음  
+
+### Axios 사용방법
+```jsx
+// import axios from 'axios';  // module 방식으로 사용할 때
+const axios = require('axios');  // commonjs 방식으로 사용할 때 (default임)
+axios({
+    method: "GET",
+    url: "https://www.naver.com",
+}).then(response=>{
+    console.log(response);
+})
+```
+- axios.get(url, config)
+- axios.put(url, data, config)
+- axios.post(url, data, config)
+- axios.delete(url, config)
+
+### Cheerio 사용 방법
+```jsx
+// import axios from 'axios';  // module 방식으로 사용할 때
+// import * as cheerio from 'cheerio';
+
+const axios = require("axios");
+const cheerio = require("cheerio"); 
+
+axios.get("https://naver.com").then(resp => {
+    return resp.data;
+}).then(data=>{
+    console.log(data);
+    const $ = cheerio.load(data); // jquery 관례가 이어 온 것이다
+})
+```
+- `import axios from 'axios';` : export default로 설정한 모듈을 import, import 뒤에 적은 이름은 상관 없음
+- `import * as cheerio from 'cheerio';` : 'cheerio'에 있는 모듈 전부 다를 가져옴
