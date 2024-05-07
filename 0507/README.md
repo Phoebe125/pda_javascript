@@ -139,7 +139,7 @@ axios({
 const axios = require("axios");
 const cheerio = require("cheerio"); 
 
-axios.get("https://naver.com").then(resp => {
+axios.get("https://example.com").then(resp => {
     return resp.data;
 }).then(data=>{
     console.log(data);
