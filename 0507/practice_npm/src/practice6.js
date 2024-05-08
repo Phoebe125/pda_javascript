@@ -1,3 +1,5 @@
+// 실패한 코드임...! -> practice7.js 확인
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
@@ -39,7 +41,7 @@ async function scrapeNewsPage(pageNum) {
             }).get();
         
             console.log(`PAGE ${pageNum} CRAWLING RESULT`);
-            const result = await Promise.all(values); // Promise.all을 await로 기다림
+            const result = Promise.all(values); // Promise.all을 await로 기다림
 
             fs.writeFile(`../output/result_${pageNum}.json`, JSON.stringify(result, null, 2), (err) => {
                 if (err) {
