@@ -1,4 +1,4 @@
-// 연습문제 (7): 이차전지 키워드로 네이버 뉴스 리스
+// 연습문제 (7): 이차전지 키워드로 네이버 뉴스 리스트
 
 import axios from 'axios';
 import * as cheerio from 'cheerio';
@@ -29,16 +29,11 @@ async function scrapeNaverNews(pageNum) {
     news.each((i, elem) => {
         result.push(parseNews($(elem)));
     });
-    fs.writeFile(`../output/result_news_${pageNum}.json`, JSON.stringify(result, null, 2), (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(`Saved result_news_${pageNum}.json`);
-        }
-    });
+    
     console.log(result);
     await sleep(1000); // 1초 동안 sleep (1000 밀리초)
-}
+    return result;
+}   
 
 function parseNews(elem) {
     const author = elem.find('.news_info .info_group a').text().trim();
@@ -49,7 +44,18 @@ function parseNews(elem) {
 }
 
 let i = 1;
+const newsOutput = [];
 while (i < 101) {
-    await scrapeNaverNews(i);
+    const newsOneOutput = await scrapeNaverNews(i);
+    newsOutput.push(...newsOneOutput);
+    console.log(newsOutput.length);
     i += 10;
 }
+
+fs.writeFile(`../output/result_news.json`, JSON.stringify(newsOutput, null, 2), (err) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(`Saved result_news.json`);
+    }
+});

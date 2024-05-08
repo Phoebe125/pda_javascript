@@ -21,16 +21,20 @@ async function scrapeWadiz(num) {
     });
     const data = await resp.data.data.list;
     console.log(resp.data);
-    fs.writeFile(`../output/result_wadiz_${num}.json`, JSON.stringify(data, null, 2), (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(`Saved result_wadiz_${num}.json`);
-        }
-    });
-
+    return data;
 }
 
+const resultOutput = [];
 
-scrapeWadiz(0);
-scrapeWadiz(1);
+for (let i = 0; i < 2; i++) {
+    const singleOutput = await scrapeWadiz(i);
+    resultOutput.push(...singleOutput); 
+
+}
+fs.writeFile(`../output/result_wadiz.json`, JSON.stringify(resultOutput, null, 2), (err) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(`Saved result_wadiz.json`);
+    }
+});
