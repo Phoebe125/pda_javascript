@@ -148,3 +148,9 @@ axios.get("https://example.com").then(resp => {
 ```
 - `import axios from 'axios';` : export default로 설정한 모듈을 import, import 뒤에 적은 이름은 상관 없음
 - `import * as cheerio from 'cheerio';` : 'cheerio'에 있는 모듈 전부 다를 가져옴
+
+
+### 자바스크립트 데이터 수집 핵심 요약
+- 데이터 수집은 (요청 -> 파싱 -> 저장) 의 순서를 거친다.
+- Node.js에서 요청을 보낼 때는 axios를 사용한다.
+- Node.js에서 Parsing을 위한 라이브러리는 cheerio를 사용한다.
