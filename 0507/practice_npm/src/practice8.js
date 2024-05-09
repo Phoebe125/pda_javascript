@@ -24,14 +24,7 @@ async function scrapeDatePrice(pageNum) {
     const tableParsed = table.map((i, el) => {
         return parseTable($(el), $);
     }).get();
-
-    fs.writeFile(`../output/result_stock_${pageNum}.json`, JSON.stringify(tableParsed, null, 2), (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(`Saved result_stock_${pageNum}.json`);
-        }
-    });
+    return tableParsed;
 }
 
 function parseTable(Elem, $) {
@@ -49,10 +42,20 @@ function parseTable(Elem, $) {
         };
         console.log(result);
         return result;
-
+        
     }
 }
 
+const mainResult = [];
 for (let p = 1; p < 11; p++) {
-    await scrapeDatePrice(p);
+    const tmpResult = await scrapeDatePrice(p);
+    mainResult.push(...tmpResult);
 }
+
+fs.writeFile(`../output/result_stock.json`, JSON.stringify(mainResult, null, 2), (err) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(`Saved result_stock.json`);
+    }
+});

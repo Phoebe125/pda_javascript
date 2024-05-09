@@ -26,14 +26,7 @@ async function scrapeNotice(pageNum) {
     const tableParsed = table.map((i, el) => {
         return parseTable($(el));
     }).get();
-
-    fs.writeFile(`../output/result_notice_${pageNum}.json`, JSON.stringify(tableParsed, null, 2), (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(`Saved result_notice_${pageNum}.json`);
-        }
-    });
+    return tableParsed;
 }
 
 function parseTable(Elem) {
@@ -46,6 +39,16 @@ function parseTable(Elem) {
     }
 }
 
+const mainResult = [];
 for (let i = 1; i < 11; i++) {
-    await scrapeNotice(i);
+    const tmpResult = await scrapeNotice(i);
+    mainResult.push(...tmpResult);
 }
+
+fs.writeFile(`../output/result_notice.json`, JSON.stringify(mainResult, null, 2), (err) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(`Saved result_notice.json`);
+    }
+});
