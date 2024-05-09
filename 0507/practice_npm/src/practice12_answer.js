@@ -24,11 +24,35 @@ async function main(){
         start:1,
         where:'news_tab_api',
         nso:'so:r,p:all,a:all',
-        _callback:'jQuery1124006899474636072167_1715213644492&_=1715213644497'
+        _callback:'jQuery1124006899474636072167',
+        _:'1715213644497'
     }
+
     const resp = await axios.get(url, {
         params:params
     });
-    console.log(resp.data);
+    const body = resp.data;
+    let data = body.slice(
+        "jQuery1124006899474636072167_1715213644492(".length, 
+        body.length-2
+    );
+    data = JSON.parse(data);
+    
+    const result = [];
+    for (let html of data.contents){
+        const $ = cheerio.load(html);
+        const anchor = $('.news_contents a.news_tit');
+        const title = anchor.text().trim();
+        const url = anchor.prop('href');
+        const desc = $('.dsc_wrap').text();
+        result.push({
+            title,
+            url,
+            desc
+        })
+    }
+    console.log(result);
+
+    
 }
 main();
