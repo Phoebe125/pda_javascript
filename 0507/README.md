@@ -154,3 +154,11 @@ axios.get("https://example.com").then(resp => {
 - 데이터 수집은 (요청 -> 파싱 -> 저장) 의 순서를 거친다.
 - Node.js에서 요청을 보낼 때는 axios를 사용한다.
 - Node.js에서 Parsing을 위한 라이브러리는 cheerio를 사용한다.
+
+
+### JSONP (JSON with Padding)의 이해
+- 기본적으로 브라우저 JS에서의 통신은 SOP (Same Origin Policy - 동일 출처 정책)에 따라 다른 origin 데이터를 요청할 수 없다.
+- script Element의 src 속성을 통해 데이터를 가져오자!
+- 그냥 가져오면 상태 업데이트 불가 (json 파일 자체는 아무것도 하지 않음)
+- 해당 데이터를 로드하는 script를 실행하는 callback 함수가 들어있는 script 파일을 받아오자.
+- 그러면 브라우저는 해당 script를 JS로 인식하고 함수를 실행시켜 상태를 관리할 수 있을 거야! (데이터를 처리할 수 있을거야!)
